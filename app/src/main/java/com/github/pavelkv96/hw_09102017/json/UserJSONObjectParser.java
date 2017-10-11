@@ -20,8 +20,8 @@ class UserJSONObjectParser implements IAllParser {
 
     @Override
     public IAll parse() throws Exception {
-        String s = IOUtils.toString(mSource);
-        final JSONObject jsonObject = new JSONObject(s);
+        final String Source = IOUtils.toString(mSource);
+        final JSONObject jsonObject = new JSONObject(Source);
         return new UserJSONWrapper(jsonObject);
     }
 }

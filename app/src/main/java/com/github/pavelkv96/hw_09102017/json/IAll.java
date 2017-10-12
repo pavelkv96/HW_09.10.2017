@@ -28,8 +28,6 @@ public interface IAll {
     long getRegistered();//Format
     double getLatitude();
     double getLongitude();
-    //Tags
-    List<IFriends> getFriends() throws JSONException;//Friends
     String getGreeting();
     String getFavoriteFruit();
 }

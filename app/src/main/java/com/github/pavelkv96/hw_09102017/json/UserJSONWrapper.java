@@ -133,28 +133,6 @@ class UserJSONWrapper implements IAll {
     }
 
     @Override
-    public List<IFriends> getFriends() throws JSONException {
-        IFriends iFriends = null;
-        final JSONArray jsonArray = mJsonObject.optJSONArray(FRIENDS);
-        List<IFriends> list = new ArrayList<>();
-        for (int i=0;i<jsonArray.length();i++) {
-            iFriends = new IFriends() {
-                @Override
-                public long getIdFriends(int i) throws JSONException {
-                    return Long.parseLong((jsonArray.optJSONObject(i).get(ID)).toString());
-                }
-
-                @Override
-                public String getNameFriends(int i) throws JSONException {
-                    return (jsonArray.optJSONObject(i).get(NAME)).toString();/*jsonArray.optString(0);*/
-                }
-            };
-        }
-        list.add(iFriends);
-        return list;
-    }
-
-    @Override
     public String getGreeting() {
         return mJsonObject.optString(GREETING);
     }

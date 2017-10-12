@@ -18,4 +18,16 @@ public class UserParserFactory {
     public IAllListParser createParserJsonList(final InputStream pSource){
         return new UserJSONListParser(pSource);
     }
+
+    public IAllParser createGsonUserParser(final InputStream pSourse){
+        return new UserGsonParser(pSourse);
+    }
+
+    public IAllListParser createGsonUserListParser(final InputStream pSourse){
+        return new UserListGsonParser(pSourse);
+    }
+
+    public IAllListParser createUserListWithObjectGsonParser(final InputStream pSourse){
+        return new UserListWithObjectGsonParser(pSourse);
+    }
 }

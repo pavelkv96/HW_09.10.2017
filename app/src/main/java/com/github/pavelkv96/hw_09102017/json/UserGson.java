@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -59,7 +61,7 @@ public class UserGson implements IAll {
     private String ABOUT;
 
     @SerializedName("registered")
-    private long REGISTERED;
+    private String REGISTERED;
 
     @SerializedName("latitude")
     private double LATITUDE;
@@ -153,8 +155,10 @@ public class UserGson implements IAll {
     }
 
     @Override
-    public long getRegistered() {
-        return REGISTERED;
+    public String getRegistered() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(REGISTERED));
+        return new SimpleDateFormat("dd MMM yyyy, hh:mm:ss").format(calendar.getTime());
     }
 
     @Override

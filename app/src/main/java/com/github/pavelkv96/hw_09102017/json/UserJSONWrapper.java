@@ -1,11 +1,9 @@
 package com.github.pavelkv96.hw_09102017.json;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * Created by Pavel on 10.10.2017.
@@ -118,8 +116,10 @@ class UserJSONWrapper implements IAll {
     }
 
     @Override
-    public long getRegistered() {
-        return mJsonObject.optLong(REGISTERED);
+    public String getRegistered() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(mJsonObject.optString(REGISTERED)));
+        return new SimpleDateFormat("dd MMM yyyy, hh:mm:ss").format(calendar.getTime());
     }
 
     @Override

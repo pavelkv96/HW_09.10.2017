@@ -25,7 +25,7 @@ public interface IAll {
     String getPhone();
     String getAddress();
     String getAbout();
-    long getRegistered();//Format
+    String getRegistered();
     double getLatitude();
     double getLongitude();
     String getGreeting();

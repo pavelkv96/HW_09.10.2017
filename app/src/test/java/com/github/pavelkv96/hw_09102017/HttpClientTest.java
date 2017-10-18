@@ -54,7 +54,7 @@ public class HttpClientTest {
 
         assertEquals(users.getEmail(), EMAIL_TEST_ONE_OBJECT);
         assertEquals(users.getAddress(), ADDRESS_TEST_ONE_OBJECT);
-        assertEquals(users.getRegistered(), "09 окт 2017, 10:52:51");
+        assertEquals(users.getRegistered(), "09 Oct 2017, 10:52:51");
     }
 
     @Test
@@ -82,7 +82,7 @@ public class HttpClientTest {
         assertTrue(users.getAllList().size() == SIZE_ARRAY_TEST_THREE_LIST);
         assertTrue(users.getAllList().get(1).getId().equals(ID_TEST_THREE_LIST));
         assertEquals(users.getAllList().get(0).getAddress(), ADDRESS_TEST_THREE_LIST);
-        assertEquals(users.getAllList().get(1).getRegistered(), "08 окт 2017, 07:06:11");
+        assertEquals(users.getAllList().get(1).getRegistered(), "08 Oct 2017, 07:06:11");
     }
 
     @Test
@@ -96,7 +96,7 @@ public class HttpClientTest {
 
         assertEquals(users.getEmail(), EMAIL_TEST_ONE_OBJECT);
         assertEquals(users.getAddress(), ADDRESS_TEST_ONE_OBJECT);
-        assertEquals(users.getRegistered(), "09 окт 2017, 10:52:51");
+        assertEquals(users.getRegistered(), "09 Oct 2017, 10:52:51");
     }
 
     @Test

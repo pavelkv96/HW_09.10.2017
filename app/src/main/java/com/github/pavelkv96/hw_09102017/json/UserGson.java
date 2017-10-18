@@ -1,13 +1,20 @@
 package com.github.pavelkv96.hw_09102017.json;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONException;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Pavel on 12.10.2017.
@@ -155,10 +162,10 @@ public class UserGson implements IAll {
     }
 
     @Override
-    public String getRegistered() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(Long.parseLong(REGISTERED));
-        return new SimpleDateFormat("dd MMM yyyy, hh:mm:ss").format(calendar.getTime());
+    public String getRegistered() throws ParseException{
+        final DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy, hh:mm:ss", Locale.ENGLISH);
+        Date date = new Date(Long.parseLong(REGISTERED));
+        return dateFormat.format(date);
     }
 
     @Override

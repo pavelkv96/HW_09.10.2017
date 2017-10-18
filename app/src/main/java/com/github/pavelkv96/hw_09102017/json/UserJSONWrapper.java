@@ -2,8 +2,11 @@ package com.github.pavelkv96.hw_09102017.json;
 
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by Pavel on 10.10.2017.
@@ -117,9 +120,13 @@ class UserJSONWrapper implements IAll {
 
     @Override
     public String getRegistered() {
-        Calendar calendar = Calendar.getInstance();
+        final long dateLong = mJsonObject.optLong(REGISTERED);
+        final Date date = new Date(dateLong);
+        final DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy, hh:mm:ss", Locale.ENGLISH);
+        return dateFormat.format(date);
+        /*Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(mJsonObject.optString(REGISTERED)));
-        return new SimpleDateFormat("dd MMM yyyy, hh:mm:ss").format(calendar.getTime());
+        return new SimpleDateFormat("dd MMM yyyy, hh:mm:ss").format(calendar.getTime());*/
     }
 
     @Override
